@@ -1,32 +1,24 @@
 {
   "name": "jk-oc-form-select",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "External Selectbox",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [ "dist", "README.md" ],
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/JKML5/jk-oc-form-select.git"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "prop-types": "^15.8.1",
-    "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -46,7 +38,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
-  }
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {      
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1"
+}
 }

@@ -1,3 +1,3 @@
-import FormSelect from './lib/FormSelect'
+import FormSelect from "./FormSelect";
 
 export { FormSelect };
