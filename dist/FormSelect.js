@@ -44,7 +44,9 @@ FormSelect.defaultProps = {
 FormSelect.propTypes = {
   id: _propTypes.default.string,
   name: _propTypes.default.string,
-  data: _propTypes.default.arrayOf(_propTypes.default.string)
+  data: _propTypes.default.oneOfType([
+  // Accepte à la fois un tableau de string et un tableau d'objets
+  _propTypes.default.arrayOf(_propTypes.default.string), _propTypes.default.arrayOf(_propTypes.default.shape({}))])
 };
 var _default = FormSelect;
 exports.default = _default;
