@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _templateObject;
@@ -20,15 +21,15 @@ function FormSelect(_ref) {
     return 0;
   });
   function getOption(optionData) {
-    return typeof optionData === 'string' ? /*#__PURE__*/React.createElement("option", {
+    return typeof optionData === 'string' ? /*#__PURE__*/_react.default.createElement("option", {
       key: optionData,
       value: optionData
-    }, optionData) : /*#__PURE__*/React.createElement("option", {
+    }, optionData) : /*#__PURE__*/_react.default.createElement("option", {
       key: Object.values(optionData)[0],
       value: Object.values(optionData)[1]
     }, Object.values(optionData)[0]);
   }
-  return /*#__PURE__*/React.createElement(StyledSelect, {
+  return /*#__PURE__*/_react.default.createElement(StyledSelect, {
     id: id,
     name: name
   }, sortedValues.map(function (value) {
