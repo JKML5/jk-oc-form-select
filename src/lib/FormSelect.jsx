@@ -5,23 +5,23 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function FormSelect({ id, name, data }) {
-  const StyledSelect = styled.select`
-    font-size: 16px;
-    height: 40px;
+const StyledSelect = styled.select`
+  font-size: 16px;
+  height: 40px;
+  border: none;
+  outline: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 0 10px;
+  width: 50%;
+
+  &:focus {
     border: none;
-    outline: 1px solid #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    padding: 0 10px;
-    width: 50%;
+    outline: 2px solid #4e6701;
+  }
+`;
 
-    &:focus {
-      border: none;
-      outline: 2px solid #4e6701;
-    }
-  `;
-
+function FormSelect({ id, name, data }) {
   const sortedValues =
     typeof data[0] === 'string'
       ? data.sort()
