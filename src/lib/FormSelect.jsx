@@ -21,7 +21,7 @@ const StyledSelect = styled.select`
   }
 `;
 
-function FormSelect({ id, name, data }) {
+function FormSelect({ id, name, value, onChange, data }) {
   const sortedValues =
     typeof data[0] === 'string'
       ? data.sort()
@@ -47,7 +47,7 @@ function FormSelect({ id, name, data }) {
   }
 
   return (
-    <StyledSelect id={id} name={name}>
+    <StyledSelect id={id} name={name} value={value} onChange={onChange}>
       {sortedValues.map((value) => getOption(value))}
     </StyledSelect>
   );
@@ -56,12 +56,16 @@ function FormSelect({ id, name, data }) {
 FormSelect.defaultProps = {
   id: '',
   name: '',
+  value: '',
+  onChange: () => {},
   data: [],
 };
 
 FormSelect.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
   data: PropTypes.oneOfType([ // Accepte à la fois un tableau de string et un tableau d'objets
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.shape({})),
