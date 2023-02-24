@@ -1,9 +1,10 @@
 /**
  * Sort & show options value for selectbox
  */
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledSelect = styled.select`
   font-size: 16px;
@@ -23,7 +24,7 @@ const StyledSelect = styled.select`
 
 function FormSelect({ id, name, value, onChange, data }) {
   const sortedValues =
-    typeof data[0] === 'string'
+    typeof data[0] === "string"
       ? data.sort()
       : data.sort((a, b) => {
           if (Object.values(a)[0] < Object.values(b)[0]) return -1;
@@ -32,7 +33,7 @@ function FormSelect({ id, name, value, onChange, data }) {
         });
 
   function getOption(optionData) {
-    return typeof optionData === 'string' ? (
+    return typeof optionData === "string" ? (
       <option key={optionData} value={optionData}>
         {optionData}
       </option>
@@ -48,15 +49,16 @@ function FormSelect({ id, name, value, onChange, data }) {
 
   return (
     <StyledSelect id={id} name={name} value={value} onChange={onChange}>
-      {sortedValues.map((value) => getOption(value))}
+      <option value="">&nbsp;</option>
+      {sortedValues.map((optionData) => getOption(optionData))}
     </StyledSelect>
   );
 }
 
 FormSelect.defaultProps = {
-  id: '',
-  name: '',
-  value: '',
+  id: "",
+  name: "",
+  value: "",
   onChange: () => {},
   data: [],
 };
@@ -66,7 +68,8 @@ FormSelect.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
-  data: PropTypes.oneOfType([ // Accepte à la fois un tableau de string et un tableau d'objets
+  data: PropTypes.oneOfType([
+    // Accepte à la fois un tableau de string et un tableau d'objets
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.shape({})),
   ]),
