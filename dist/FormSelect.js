@@ -17,13 +17,13 @@ function FormSelect(_ref) {
     value = _ref.value,
     onChange = _ref.onChange,
     data = _ref.data;
-  var sortedValues = typeof data[0] === "string" ? data.sort() : data.sort(function (a, b) {
+  var sortedValues = typeof data[0] === 'string' ? data.sort() : data.sort(function (a, b) {
     if (Object.values(a)[0] < Object.values(b)[0]) return -1;
     if (Object.values(a)[0] > Object.values(b)[0]) return 1;
     return 0;
   });
   function getOption(optionData) {
-    return typeof optionData === "string" ? /*#__PURE__*/_react.default.createElement("option", {
+    return typeof optionData === 'string' ? /*#__PURE__*/_react.default.createElement("option", {
       key: optionData,
       value: optionData
     }, optionData) : /*#__PURE__*/_react.default.createElement("option", {
@@ -43,9 +43,9 @@ function FormSelect(_ref) {
   }));
 }
 FormSelect.defaultProps = {
-  id: "",
-  name: "",
-  value: "",
+  id: '',
+  name: '',
+  value: '',
   onChange: function onChange() {},
   data: []
 };

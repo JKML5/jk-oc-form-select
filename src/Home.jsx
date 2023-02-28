@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import FormSelect from "./lib/FormSelect";
+import React, { useState } from 'react';
+import FormSelect from './lib/FormSelect';
 
 function Home() {
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState('');
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
 
   const departments = [
-    "Sales",
-    "Marketing",
-    "Engineering",
-    "Human Resources",
-    "Legal",
+    'Sales',
+    'Marketing',
+    'Engineering',
+    'Human Resources',
+    'Legal',
   ];
 
   return (
