@@ -16,7 +16,7 @@ Import the component and render it with the data you want to display:
 
 ```
 import React from 'react';
-import FormSelect from 'jk-oc-form-select';
+import FormSelect from 'jk-oc-form-select/dist/FormSelect';
 
 const data = [
   { value: 'option1', label: 'Option 1' },
